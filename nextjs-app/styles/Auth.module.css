@@ -1,0 +1,97 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #f3e7ff 0%, #ffe7f4 100%);
+}
+
+.authCard {
+  width: 100%;
+  max-width: 400px;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  text-align: center;
+}
+
+.authTitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #1f2937;
+}
+
+.inputField {
+  width: 100%;
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.passwordContainer {
+  position: relative;
+  width: 100%;
+}
+
+.toggleButton {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #6b7280;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 0.875rem;
+}
+
+.toggleButton:hover {
+  color: #4b5563;
+}
+
+.submitButton {
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 1rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #7c3aed;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submitButton:hover {
+  background-color: #6d28d9;
+}
+
+.forgetPassword {
+  display: block;
+  margin-top: 1rem;
+  color: #6b7280;
+  text-decoration: none;
+  font-size: 0.875rem;
+}
+
+.forgetPassword:hover {
+  color: #4b5563;
+}
+
+
+.createAccount {
+  margin-top: 15px; /* Space above the text */
+}
+
+.createAccountButton {
+  background: none;
+  border: none;
+  color: blue; /* Change to your desired link color */
+  cursor: pointer;
+  text-decoration: underline; /* Underline for link effect */
+}
