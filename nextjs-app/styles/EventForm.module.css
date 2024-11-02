@@ -1,7 +1,7 @@
 /* Header Styles */
 .header {
     background-color: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(4px);
     padding: 1rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
     position: sticky;
@@ -43,10 +43,10 @@
 /* RegistrationForm.module.css */
 
 .outerContainer {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    background: linear-gradient(135deg, #f3e7ff 0%, #cdcbd6 100%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, #f3e7ff 0%, #cdcbd6 100%);
 }
 
 /* RegistrationForm.module.css */
@@ -55,13 +55,17 @@
 
 .container {
   background-color: #cdcbd6; /* Soft purple background */
-  padding: 2rem;
-  border-radius: 8px;
-  width: 100%;
-  max-width: 600px;
+  width: 60%;
+  max-width: 400px;
   margin: 50px auto;
-  justify-content: center;
-  align-items: center;
+  margin-top: 40px;
+  padding: 2.5rem;
+  /* background-color: rgba(255, 255, 255, 0.9); */
+  /* backdrop-filter: blur(8px); */
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
 }
 
 .title {
@@ -74,6 +78,8 @@
 
 .addQuestion {
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   gap: 0.5rem;
   margin-bottom: 1rem;
 }
@@ -81,7 +87,7 @@
 .input, .select {
   flex: 1;
   padding: 0.5rem;
-  border-radius: 4px;
+  border-radius: 5px;
   border: 1px solid #cdcbd6;
   outline: none;
   font-size: 1rem;
@@ -90,11 +96,12 @@
 }
 
 .addButton {
+  flex: 1;
   background-color: #d96846;
   color: #fff;
   border: none;
   padding: 0.5rem 1rem;
-  border-radius: 4px;
+  border-radius: 5px;
   cursor: pointer;
   font-weight: bold;
   transition: background-color 0.3s ease;
