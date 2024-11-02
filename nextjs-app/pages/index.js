@@ -13,6 +13,10 @@ const HomePage = () => {
     router.push('/explore');
   };
 
+  const handleCreateEvent = () => {
+    router.push('/create')
+  }
+
   return (
     <div className={styles.container}>
       <Header/>
@@ -26,7 +30,7 @@ const HomePage = () => {
 
           <div className={styles.cardContainer}>
             {/* Host Events Card */}
-            <div className={`${styles.card} ${styles.hostCard}`}>
+            <div className={`${styles.card} ${styles.hostCard}`} onClick={handleCreateEvent}>
               <h3 className={styles.cardTitle}>
                 Host Events ✨
               </h3>

@@ -4,22 +4,6 @@ import styles from '../styles/EventForm.module.css'; // Import CSS module
 import Header from '../components/header';
 import Footer from '../components/footer';
 
-const LogoWithIcon = () => {
-  const router = useRouter();
-
-  // Handler to navigate to the home page
-  const handleLogoClick = () => {
-    router.push('/');
-  };
-  
-  return (
-    <h1 className={styles.logo}  onClick={handleLogoClick} style={{ cursor: 'pointer' }}>
-      <span>Event</span>
-      <span>Hub</span>
-    </h1>
-  );
-};
-
 export default function EventForm() {
   const [questions, setQuestions] = useState([]);
   const [newQuestion, setNewQuestion] = useState({ label: '', type: 'text' });
@@ -54,34 +38,33 @@ export default function EventForm() {
         <div className={styles.container}>
       <h2 className={styles.title}>Let's create your event 📸</h2>
 
-      {/* Display added questions and inputs */}
-      <form onSubmit={handleSubmit} className={styles.form}>
-        <div key='Name' className={styles.question}>
-          <label className={styles.label}>Event name</label>
-          <input type='text' name='Event_name' required className={styles.input} />
-        </div>
-        <div key='Date' className={styles.question}>
-          <label className={styles.label}>Event is from</label>
-          <input type='date' name='Date' required className={styles.input} 
-          value={eventDate} 
-          onChange={(event) => setEventDate(event.target.value)}/>
-        </div>
-        <div key='Date' className={styles.question}>
-          <label className={styles.label}>To</label>
-          <input type='date' name='Date' required className={styles.input} 
-          value={eventDate} 
-          onChange={(event) => setEventDate(event.target.value)}/>
-        </div>
-
-        <h2 className={styles.label}>Got questions for your guests?</h2>
-        {questions.map((question, index) => (
-          <div key={index} className={styles.question}>
-            <label className={styles.label}>{question.label}</label>
-            <input type={question.type} name={question.label} disabled className={styles.input} />
+        {/* Display added questions and inputs */}
+        <form onSubmit={handleSubmit} className={styles.form}>
+          <div key='Event_name' className={styles.question}>
+            <label className={styles.label}>Event Name</label>
+            <input type='text' name='Event_name' required className={styles.input} />
           </div>
-        ))}
+          <div key='Date' className={styles.question}>
+            <label className={styles.label}>Date</label>
+            <input type='date' name='Date' required className={styles.input} 
+            value={eventDate} 
+            onChange={(event) => setEventDate(event.target.value)}/>
+          </div>
+          <div key='Time' className={styles.question}>
+            <label className={styles.label}>Time</label>
+            <input type='time' name='Time' required className={styles.input} />
+          </div>
+          <div key='Venue' className={styles.question}>
+            <label className={styles.label}>Venue</label>
+            <input type='text' name='Venue' required className={styles.input} />
+          </div>
+          <div key='Event_description' className={styles.question}>
+            <label className={styles.label}>Event Description</label>
+            <textarea required className={styles.input}></textarea>
+          </div>
 
         {/* Form to add a new question */}
+        <h3 className={styles.title}>Got questions for those registering?</h3>
       <div className={styles.addQuestion}>
         <input
           type="text"
