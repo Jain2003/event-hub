@@ -1,7 +1,31 @@
 import { useState } from 'react';
+import { useRouter } from 'next/router';
 import styles from '../styles/EventForm.module.css'; // Import CSS module
 
+const LogoWithIcon = () => {
+  const router = useRouter();
+
+  // Handler to navigate to the home page
+  const handleLogoClick = () => {
+    router.push('/');
+  };
+  
+  return (
+    <h1 className={styles.logo}  onClick={handleLogoClick} style={{ cursor: 'pointer' }}>
+      <span>Event</span>
+      <span>Hub</span>
+    </h1>
+  );
+};
+
 export default function EventForm() {
+  const router = useRouter();
+
+  // Handler to navigate to the auth sign-in page
+  const handleLoginClick = () => {
+    router.push('/authlogin');
+  };
+
   const [questions, setQuestions] = useState([]);
   const [newQuestion, setNewQuestion] = useState({ label: '', type: 'text' });
   const [eventDate, setEventDate] = useState(new Date().toISOString().split('T')[0]);
@@ -24,12 +48,15 @@ export default function EventForm() {
 
   return (
     <div className={styles.outerContainer}>
-        {/* Header */}
+      {/* Header */}
       <header className={styles.header}>
         <div className={styles.headerContent}>
-          <h1 className={styles.logo}>EventHub</h1>
-          <button className={styles.signInButton}>
-            👤 Sign In
+          <LogoWithIcon />
+          <button 
+            className={styles.signInButton} 
+            onClick={handleLoginClick}  // Add the click handler here
+          >
+            👤 Login In
           </button>
         </div>
       </header>
@@ -67,7 +94,7 @@ export default function EventForm() {
       <div className={styles.addQuestion}>
         <input
           type="text"
-          placeholder="Question label"
+          placeholder="Question here"
           value={newQuestion.label}
           onChange={(e) => setNewQuestion({ ...newQuestion, label: e.target.value })}
           className={styles.input}
