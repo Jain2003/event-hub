@@ -4,6 +4,7 @@ import styles from '../styles/EventForm.module.css'; // Import CSS module
 export default function EventForm() {
   const [questions, setQuestions] = useState([]);
   const [newQuestion, setNewQuestion] = useState({ label: '', type: 'text' });
+  const [eventDate, setEventDate] = useState(new Date().toISOString().split('T')[0]);
 
   const addQuestion = () => {
     setQuestions([...questions, newQuestion]);
@@ -33,14 +34,32 @@ export default function EventForm() {
         </div>
       </header>
         <div className={styles.container}>
-      <h2 className={styles.title}>Event Registration Form</h2>
+      <h2 className={styles.title}>Let's create your event 📸</h2>
 
       {/* Display added questions and inputs */}
       <form onSubmit={handleSubmit} className={styles.form}>
+        <div key='Name' className={styles.question}>
+          <label className={styles.label}>Event name</label>
+          <input type='text' name='Event_name' required className={styles.input} />
+        </div>
+        <div key='Date' className={styles.question}>
+          <label className={styles.label}>Event is from</label>
+          <input type='date' name='Date' required className={styles.input} 
+          value={eventDate} 
+          onChange={(event) => setEventDate(event.target.value)}/>
+        </div>
+        <div key='Date' className={styles.question}>
+          <label className={styles.label}>To</label>
+          <input type='date' name='Date' required className={styles.input} 
+          value={eventDate} 
+          onChange={(event) => setEventDate(event.target.value)}/>
+        </div>
+
+        <h2 className={styles.label}>Got questions for your guests?</h2>
         {questions.map((question, index) => (
           <div key={index} className={styles.question}>
             <label className={styles.label}>{question.label}</label>
-            <input type={question.type} name={question.label} required className={styles.input} />
+            <input type={question.type} name={question.label} disabled className={styles.input} />
           </div>
         ))}
 
