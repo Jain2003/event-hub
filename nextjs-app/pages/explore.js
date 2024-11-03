@@ -4,56 +4,18 @@ import styles from '../styles/Explore.module.css';
 import Header from '../components/header';
 import Footer from '../components/footer';
 import { Calendar, Clock, MapPin } from 'lucide-react';
-
+import { events, getEventCategories } from '../temp-data/data';
 const ExplorePage = () => {
-  // Sample events data - in a real app, this would come from an API
-  const events = [
-    {
-      id: 1,
-      name: "Summer Music Festival",
-      description: "Join us for an incredible day of live music performances featuring local and international artists.",
-      date: "2024-06-15",
-      time: "14:00",
-      location: "Central Park",
-      category: "Music"
-    },
-    {
-      id: 2,
-      name: "Tech Conference 2024",
-      description: "Explore the latest innovations in technology with industry leaders and experts.",
-      date: "2024-07-20",
-      time: "09:00",
-      location: "Convention Center",
-      category: "Technology"
-    },
-    {
-      id: 3,
-      name: "Food & Wine Festival",
-      description: "Experience a culinary journey with premium wines and gourmet food from top chefs.",
-      date: "2024-06-30",
-      time: "16:00",
-      location: "Downtown Square",
-      category: "Food"
-    },
-    {
-      id: 4,
-      name: "Art Exhibition Opening",
-      description: "Witness the unveiling of contemporary artworks from emerging local artists.",
-      date: "2024-06-22",
-      time: "18:30",
-      location: "Modern Art Gallery",
-      category: "Art"
-    }
-  ];
 
-  const formatDate = (dateStr) => {
-    return new Date(dateStr).toLocaleDateString('en-US', {
-      weekday: 'long',
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
-    });
-  };
+    const router = useRouter();
+    const formatDate = (dateStr) => {
+        return new Date(dateStr).toLocaleDateString('en-US', {
+          weekday: 'long',
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric'
+        });
+      };
 
   return (
     <div className={styles.container}>
@@ -99,7 +61,12 @@ const ExplorePage = () => {
                     <span>{event.location}</span>
                   </div>
                 </div>
-                <button className={styles.registerButton}>Register Now</button>
+                <button 
+  className={styles.registerButton}
+  onClick={() => router.push(`/event/${event.id}`)}
+>
+  Register Now
+</button>
               </div>
             ))}
           </div>
