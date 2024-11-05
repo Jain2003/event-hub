@@ -69,9 +69,6 @@ const EventDetailPage = () => {
             </div>
 
             <div className={styles.sidebar}>
-            <button className={styles.registerButton}>
-                Register for Event
-              </button>
               <div className={styles.infoCard}>
                 <div className={styles.infoItem}>
                   <Calendar size={20} />
@@ -119,7 +116,9 @@ const EventDetailPage = () => {
                 </div>
               </div>
 
-              
+              <button className={styles.registerButton}>
+                Register for Event
+              </button>
             </div>
           </div>
         </div>

@@ -3,7 +3,7 @@ import styles from '../styles/Auth.module.css';
 import { useRouter } from 'next/router';
 import { Eye, EyeOff } from 'lucide-react';
 import Header from '../components/header';
-import Footer from '../components/footer'
+// import Footer from '../components/footer'
 
 const AuthPage = () => {
   // State to manage password visibility
@@ -63,7 +63,7 @@ const AuthPage = () => {
           Submit
         </button>
       </div>
-      <Footer/>
+      {/* <Footer/> */}
     </div>
   );
 };
