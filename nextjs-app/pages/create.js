@@ -65,6 +65,12 @@ export default function EventForm() {
 
         {/* Form to add a new question */}
         <h3 className={styles.title}>Got questions for those registering?</h3>
+        {questions.map((question, index) => (
+            <div key={index} className={styles.question}>
+              <label className={styles.label}>{question.label}</label>
+              <input type={question.type} name={question.label} required className={styles.input} />
+            </div>
+          ))}
       <div className={styles.addQuestion}>
         <input
           type="text"

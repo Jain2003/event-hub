@@ -54,7 +54,7 @@
 /* RegistrationForm.module.css */
 
 .container {
-  background-color: #cdcbd6; /* Soft purple background */
+  background-color: rgba(31, 41, 55, 0.9); /* Soft purple background */
   width: 80%;
   max-width: 600px;
   margin: 50px auto;
@@ -72,7 +72,7 @@
   font-size: 2rem;
   text-align: center;
   margin-bottom: 1.5rem;
-  color: #5a189a; /* Bright purple text */
+  color: palevioletred; /* Bright purple text */
   font-weight: bold;
 }
 
@@ -127,7 +127,7 @@
 .label {
   margin-bottom: 0.5rem;
   font-weight: bold;
-  color: #5a189a; /* Bright purple label text */
+  color: white; /* Bright purple label text */
 }
 
 .submitButton {
